@@ -34,34 +34,35 @@ class __ListViewBasicState extends State<_ListViewBasic> {
             child: ListView.builder(
                 itemCount: data.length,
                 itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 5,
-                    child: Padding(
-                      padding: EdgeInsets.all(4),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          child: Text("${index + 1}"),
-                          backgroundColor: Colors.orange,
-                          foregroundColor: Colors.black,
-                        ),
-                        title: Text(
-                          data.elementAt(index).asSnakeCase,
-                          style: TextStyle(color: Colors.red, fontSize: 22),
-                        ),
-                        subtitle: Text("mo ta ??"),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.favorite_border)),
-                            IconButton(
-                                onPressed: () {}, icon: Icon(Icons.room)),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
+                  return buildCard(index);
                 })));
+  }
+
+  Widget buildCard(int index) {
+    return Card(
+      elevation: 5,
+      child: Padding(
+        padding: EdgeInsets.all(4),
+        child: ListTile(
+          leading: CircleAvatar(
+            child: Text("${index + 1}"),
+            backgroundColor: Colors.orange,
+            foregroundColor: Colors.black,
+          ),
+          title: Text(
+            data.elementAt(index).asSnakeCase,
+            style: TextStyle(color: Colors.red, fontSize: 22),
+          ),
+          subtitle: Text("mo ta ??"),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.room)),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
