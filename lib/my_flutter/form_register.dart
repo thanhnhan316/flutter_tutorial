@@ -84,7 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
                   RegExp regex = new RegExp(pattern.toString());
                   if (value == null || value.isEmpty)
-                    return "Vui lòng nhập mật khẩu";
+                    return "Vui lòng nhập email";
                   else if (!regex.hasMatch(value))
                     return "Email chưa hợp lệ";
                   else

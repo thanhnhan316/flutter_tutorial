@@ -74,6 +74,7 @@ class _FormBasicState extends State<FormBasic> {
                   child: Text("Đăng nhập"),
                   onPressed: () {
                     //nếu trước dấu ! khác null mới gọi được hàm validate
+                    // bắt buộc phải có   if (_formKey.currentState! .validate ()) để xử lý dử liệu
                     if (fKey.currentState!.validate()) {
                       showDialog(
                           context: context,
