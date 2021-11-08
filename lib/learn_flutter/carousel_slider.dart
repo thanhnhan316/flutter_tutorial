@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world/model/Product_model.dart';
+import 'package:hello_world/service/service.dart';
 
 class CarouselScreen extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class _BuidlCarouselState extends State<BuidlCarousel> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchData();
+    Service().fetchData();
   }
 
   @override
@@ -37,7 +38,7 @@ class _BuidlCarouselState extends State<BuidlCarousel> {
 
   Widget buildBody() {
     return FutureBuilder(
-        future: fetchData(),
+        future: Service().fetchData(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           var data = snapshot.data;
           if (snapshot.hasData) {

@@ -1,9 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world/model/Product_model.dart';
-import 'package:http/http.dart' as http;
+import 'package:hello_world/service/service.dart';
 
 class ScreenShoppe extends StatelessWidget {
   const ScreenShoppe({Key? key}) : super(key: key);
@@ -29,9 +27,8 @@ class _BuildShoppeState extends State<BuildShoppe> {
   late Size size;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    fetchData();
+    Service().fetchData();
   }
 
   @override
@@ -44,7 +41,7 @@ class _BuildShoppeState extends State<BuildShoppe> {
 
   Widget buildBody() {
     return FutureBuilder(
-        future: fetchData(),
+        future: Service().fetchData(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             // var data = snapshot.data;
