@@ -33,6 +33,10 @@ dependencies:
   carousel_slider: ^4.0.0
   flutter_staggered_grid_view: any
   transparent_image: any
+  webview_flutter: 
+  
+  
+
 
 dev_dependencies:
   flutter_test:
