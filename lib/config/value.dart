@@ -2,7 +2,7 @@ class Value {
   String apple =
       "https://newsapi.org/v2/everything?q=apple&from=2021-11-10&to=2021-11-10&sortBy=popularity&apiKey=f650a93f63634105a75a352e57de91ec";
   String tesla =
-      "https://newsapi.org/v2/everything?q=tesla&from=2021-10-12&sortBy=publishedAt&apiKey=f650a93f63634105a75a352e57de91ec";
+      "https://newsapi.org/v2/everything?q=tesla&from=2021-10-15&sortBy=publishedAt&apiKey=f650a93f63634105a75a352e57de91ec";
   String country =
       "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f650a93f63634105a75a352e57de91ec";
   String domains =

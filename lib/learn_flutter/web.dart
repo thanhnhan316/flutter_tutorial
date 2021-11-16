@@ -29,45 +29,78 @@ class _BuidlWeblState extends State<BuidlWeb> {
     Service().fetchDataTesla(Value().domains)
   ];
   var image = [Value().imageTesla, Value().imageapple, Value().imagedomain];
-
+  var str = ["Testla", "Apple", "Domains"];
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
-      body: buildBody(),
+      body: SafeArea(child: buildBody()),
     );
   }
 
   Widget buildBody() {
     return SingleChildScrollView(
       child: Column(
-        children: [buildContent(), buildContentList()],
+        children: [buildTest(), buildContent(), buildContentList()],
+      ),
+    );
+  }
+
+  Widget buildTest() {
+    return Container(
+      height: size.height * 0.05,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "flutter",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "News",
+            style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue[300]),
+          )
+        ],
       ),
     );
   }
 
   Widget buildContent() {
     return Container(
-      color: Colors.amber,
-      height: size.height * 0.2,
-      child: CarouselSlider.builder(
-          itemCount: arr.length,
-          itemBuilder: (BuildContext context, int index, int pageViewIndex) {
-            return Padding(
-              padding: const EdgeInsets.all(8),
-              child: GestureDetector(
-                child: Image.network(image[index]),
-                onTap: () {
-                  setState(() {
-                    i = index;
-                  });
-                },
-              ),
-            );
-          },
-          options: CarouselOptions(
-            height: size.height * 0.21,
-          )),
+      height: size.height * 0.17,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: arr.length,
+        itemBuilder: (BuildContext context, int index) {
+          return GestureDetector(
+            child: Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 7, left: 7),
+                  width: size.width * 0.45,
+                  height: size.height * 0.135,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover, image: NetworkImage(image[index])),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    color: Colors.redAccent,
+                  ),
+                ),
+                Text(str[index],
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19))
+              ],
+            ),
+            onTap: () {
+              setState(() {
+                i = index;
+              });
+            },
+          );
+        },
+      ),
     );
   }
 
@@ -96,7 +129,7 @@ class _BuidlWeblState extends State<BuidlWeb> {
           child: Column(
             children: [
               Card(
-                color: Colors.amber,
+                elevation: 10,
                 child: Container(
                   padding: EdgeInsets.all(10),
                   child: Column(
@@ -104,7 +137,17 @@ class _BuidlWeblState extends State<BuidlWeb> {
                       Image.network(p.urlToImage == null || p.urlToImage == ''
                           ? Value().imagenull
                           : p.urlToImage),
-                      Text(p.title),
+                      Text(
+                        p.title,
+                        maxLines: 2,
+                        style: TextStyle(
+                            fontSize: 17, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        p.content,
+                        maxLines: 2,
+                        style: TextStyle(fontSize: 15),
+                      ),
                     ],
                   ),
                 ),
@@ -113,8 +156,8 @@ class _BuidlWeblState extends State<BuidlWeb> {
             ],
           ),
           onTap: () {
-            // Navigator.pushReplacement(
-            //     context, MaterialPageRoute(builder: (context) => Web()));
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => Web(content: p.content)));
           },
         );
       },

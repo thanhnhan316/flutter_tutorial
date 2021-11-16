@@ -55,7 +55,7 @@ class Service {
 
   Future<Tesla_model> fetchDataTesla(dynamic s) async {
     String url = s == null
-        ? "https://newsapi.org/v2/everything?q=tesla&from=2021-10-11&sortBy=publishedAt&apiKey=f650a93f63634105a75a352e57de91ec"
+        ? "https://newsapi.org/v2/everything?q=tesla&from=2021-10-14&sortBy=publishedAt&apiKey=f650a93f63634105a75a352e57de91ec"
         : s;
     var reponse = await http.get(Uri.parse(url));
     if (reponse.statusCode == 200) {
