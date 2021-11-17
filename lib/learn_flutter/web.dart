@@ -34,21 +34,37 @@ class _BuidlWeblState extends State<BuidlWeb> {
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
     return Scaffold(
+       resizeToAvoidBottomInset: false,
       body: SafeArea(child: buildBody()),
     );
   }
 
   Widget buildBody() {
-    return SingleChildScrollView(
-      child: Column(
-        children: [buildTest(), buildContent(), buildContentList()],
-      ),
-    );
+    return NestedScrollView(
+        headerSliverBuilder: (context, isScrolled) {
+          return [
+             SliverAppBar(
+                collapsedHeight: size.height * 0.22,
+                automaticallyImplyLeading: false,
+                snap: true,
+                floating: true,
+                flexibleSpace: Column(children: [buildTest(), buildContent()]),
+              )
+          ];
+        },
+        body: buildContentList());
+    // SingleChildScrollView(
+    //   child: Column(
+    //     children: [buildTest(), buildContent(), buildContentList()],
+    //   ),
+    // );
   }
 
   Widget buildTest() {
     return Container(
       height: size.height * 0.05,
+      width: double.infinity,
+      color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -70,7 +86,9 @@ class _BuidlWeblState extends State<BuidlWeb> {
 
   Widget buildContent() {
     return Container(
+      color: Colors.white,
       height: size.height * 0.17,
+      width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: arr.length,
@@ -157,7 +175,10 @@ class _BuidlWeblState extends State<BuidlWeb> {
           ),
           onTap: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => Web(content: p.content)));
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        Web(content: p.content, tittle: p.title)));
           },
         );
       },

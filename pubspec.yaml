@@ -35,8 +35,6 @@ dependencies:
   transparent_image: any
   # webview_flutter: ^2.0.13
   
-  
-
 
 dev_dependencies:
   flutter_test:

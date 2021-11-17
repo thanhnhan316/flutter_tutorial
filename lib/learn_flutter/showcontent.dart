@@ -4,7 +4,9 @@ import 'package:hello_world/learn_flutter/web.dart';
 
 class Web extends StatelessWidget {
   var content;
-  Web({required this.content, Key? key}) : super(key: key);
+  var tittle;
+  Web({required this.content, required this.tittle, Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +18,18 @@ class Web extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => WebScreen()));
               },
               icon: Icon(Icons.keyboard_backspace_outlined, size: 30)),
-          title: Text("Content", style: TextStyle(fontSize: 22)),
+          title: Text(tittle, style: TextStyle(fontSize: 22)),
         ),
         body: Container(
             padding: EdgeInsets.all(20),
-            child: Text(content, style: TextStyle(fontSize: 19))));
+            child: Column(
+              children: [
+                
+                Text(tittle,
+                    style:
+                        TextStyle(fontSize: 19, fontWeight: FontWeight.bold)),
+                Text(content, style: TextStyle(fontSize: 19)),
+              ],
+            )));
   }
 }
