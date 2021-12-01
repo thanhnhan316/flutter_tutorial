@@ -59,7 +59,7 @@ class Service {
         : s;
     var reponse = await http.get(Uri.parse(url));
     if (reponse.statusCode == 200) {
-      var jsonData = json.decode(reponse.body);
+      var jsonData = json.decode(reponse.body);//trong trường hợp này có thể ko dùng dòng lệnh này
       print(jsonData);
       Tesla_model tl = TeslaFromJson(reponse.body);
       print(tl);
