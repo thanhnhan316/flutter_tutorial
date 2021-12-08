@@ -10,14 +10,15 @@ import 'package:hello_world/learn_flutter/pageview.dart';
 import 'package:hello_world/learn_flutter/page/profile.dart';
 import 'package:hello_world/learn_flutter/shoppe.dart';
 import 'package:hello_world/learn_flutter/tictac/hime_page.dart';
+import 'package:hello_world/learn_flutter/tictac/tictac.dart';
 import 'package:hello_world/learn_flutter/web.dart';
 import 'package:hello_world/my_flutter/call_api_login.dart';
 import 'package:hello_world/learn_flutter/myapp2.dart';
 
 void main() {
   runApp(MaterialApp(
-      theme: new ThemeData(primaryColor: Colors.amber[900]),
-      home: TicTacScreen()));
+      theme: new ThemeData(primaryColor: Colors.black),
+      home: BmiScreen()));
 }
 
 class MyApp extends StatelessWidget {

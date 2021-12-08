@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/learn_flutter/tictac/custom_dialog.dart';
 import 'package:hello_world/learn_flutter/tictac/game_button.dart';
 
-class TicTacScreen extends StatefulWidget {
+class TicTacPepleScreen extends StatefulWidget {
   @override
   _HomePageState createState() => new _HomePageState();
 }
 
-class _HomePageState extends State<TicTacScreen> {
+class _HomePageState extends State<TicTacPepleScreen> {
   late List<GameButton> buttonsList;
   var player1;
   var player2;
@@ -63,28 +63,10 @@ class _HomePageState extends State<TicTacScreen> {
               builder: (_) => new CustomDialog("Không ai thắng cả -_-",
                   "Nhấn nút chơi lại để bắt đầu lại", resetGame));
         }
-        else {
-          activePlayer == 2 ? autoPlay() : null;
-        }
       }
     });
   }
 
- void autoPlay() {
-    var emptyCells = [];
-    var list = new List.generate(9, (i) => i + 1);
-    for (var cellID in list) {
-      if (!(player1.contains(cellID) || player2.contains(cellID))) {
-        emptyCells.add(cellID);
-      }
-    }
-
-    var r = new Random();
-    var randIndex = r.nextInt(emptyCells.length-1);
-    var cellID = emptyCells[randIndex];
-    int i = buttonsList.indexWhere((p)=> p.id == cellID);
-    playGame(buttonsList[i]);
-  }
   int checkWinner() {
     var winner = -1;
     if (player1.contains(1) && player1.contains(2) && player1.contains(3)) {
@@ -153,12 +135,12 @@ class _HomePageState extends State<TicTacScreen> {
       if (winner == 1) {
         showDialog(
             context: context,
-            builder: (_) => new CustomDialog("Bạn thắng",
+            builder: (_) => new CustomDialog("Người chơi 1 Thắng",
                 "Nhấn nút đặt lại để bắt đầu lại", resetGame));
       } else {
         showDialog(
             context: context,
-            builder: (_) => new CustomDialog("Máy thắng",
+            builder: (_) => new CustomDialog("Người chơi 2 thắng",
                 "Nhấn nút đặt lại để bắt đầu lại.", resetGame));
       }
     }
