@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world/config/value.dart';
-import 'package:hello_world/learn_flutter/showcontent.dart';
+import 'package:hello_world/learn_flutter/news/showcontent.dart';
 import 'package:hello_world/model/tesla_model.dart';
 import 'package:hello_world/service/service.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_world/learn_flutter/web.dart';
+import 'package:hello_world/learn_flutter/news/web.dart';
 
 class Web extends StatelessWidget {
   var content;

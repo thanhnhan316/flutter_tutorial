@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_world/learn_flutter/page/profile.dart';
+import 'package:hello_world/learn_flutter/profile/profile.dart';
 import 'package:hello_world/service/service.dart';
 
 class PageViewScreen extends StatelessWidget {

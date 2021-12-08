@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/learn_flutter/Qr_screen.dart';
 import 'package:hello_world/learn_flutter/BMI/bmi.dart';
-import 'package:hello_world/learn_flutter/callfakeapi.dart';
-import 'package:hello_world/learn_flutter/carousel_slider.dart';
+import 'package:hello_world/learn_flutter/call_api/callfakeapi.dart';
+import 'package:hello_world/learn_flutter/carousel/carousel_slider.dart';
 
 import 'package:hello_world/learn_flutter/form_basic.dart';
-import 'package:hello_world/learn_flutter/listview_basic.dart';
-import 'package:hello_world/learn_flutter/pageview.dart';
-import 'package:hello_world/learn_flutter/page/profile.dart';
-import 'package:hello_world/learn_flutter/shoppe.dart';
+import 'package:hello_world/learn_flutter/carousel/listview_basic.dart';
+import 'package:hello_world/learn_flutter/profile/pageview.dart';
+import 'package:hello_world/learn_flutter/carousel/shoppe.dart';
 import 'package:hello_world/learn_flutter/tictac/hime_page.dart';
 import 'package:hello_world/learn_flutter/tictac/tictac.dart';
-import 'package:hello_world/learn_flutter/web.dart';
+import 'package:hello_world/learn_flutter/news/web.dart';
 import 'package:hello_world/my_flutter/call_api_login.dart';
 import 'package:hello_world/learn_flutter/myapp2.dart';
 
 void main() {
   runApp(MaterialApp(
       theme: new ThemeData(primaryColor: Colors.black),
-      home: BmiScreen()));
+      home: TicTac()));
 }
 
 class MyApp extends StatelessWidget {
