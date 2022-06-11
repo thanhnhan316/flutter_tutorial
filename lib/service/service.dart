@@ -62,7 +62,7 @@ class Service {
       var jsonData = json.decode(reponse.body);//trong trường hợp này có thể ko dùng dòng lệnh này
       print(jsonData);
       Tesla_model tl = TeslaFromJson(reponse.body);
-      print(tl);
+      print(tl);  
       return tl;
     } else {
       return throw Exception('Không có dữ liệu');

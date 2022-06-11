@@ -38,8 +38,7 @@ class _FormBasicState extends State<FormBasic> {
           padding: EdgeInsets.only(top: 50, left: 20, right: 20),
           child: Column(
             children: [
-              Text("Đăng nhập hệ thống",
-                  style: TextStyle(color: Colors.red, fontSize: 20)),
+              //  color: Colors.red, fontSize: 20)),
               SizedBox(height: 30),
               TextFormField(
                 controller: txtTenDangNhap,

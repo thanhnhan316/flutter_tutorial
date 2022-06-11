@@ -6,18 +6,18 @@ import 'package:hello_world/learn_flutter/carousel/carousel_slider.dart';
 
 import 'package:hello_world/learn_flutter/form_basic.dart';
 import 'package:hello_world/learn_flutter/carousel/listview_basic.dart';
+import 'package:hello_world/learn_flutter/learnprovider/multiprovider/firstprovider.dart';
+import 'package:hello_world/learn_flutter/learnprovider/providerscreen.dart';
 import 'package:hello_world/learn_flutter/profile/pageview.dart';
 import 'package:hello_world/learn_flutter/carousel/shoppe.dart';
 import 'package:hello_world/learn_flutter/tictac/hime_page.dart';
 import 'package:hello_world/learn_flutter/tictac/tictac.dart';
 import 'package:hello_world/learn_flutter/news/web.dart';
-import 'package:hello_world/my_flutter/call_api_login.dart';
 import 'package:hello_world/learn_flutter/myapp2.dart';
 
 void main() {
   runApp(MaterialApp(
-      theme: new ThemeData(primaryColor: Colors.black),
-      home: TicTac()));
+      theme: new ThemeData(primaryColor: Colors.black), home: Provider()));
 }
 
 class MyApp extends StatelessWidget {
